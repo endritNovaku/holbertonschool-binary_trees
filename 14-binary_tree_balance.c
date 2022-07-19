@@ -1,4 +1,6 @@
 #include "binary_trees.h"
+#include <stdio.h>
+
 /**
  * binary_tree_balanc - measure the balanc factor of a binary tree
  * @tree: binary tree
@@ -7,18 +9,16 @@
 
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	int measureL = 0;
-	int measureR = 0;
+	int num1 = 0;
+	int num2 = 0;
 	int total;
-
-	if (tree)
+	
+	if (tree != NULL)
 	{
-		measureL = binary_tree_balance(tree->left);
-		measureL++;
-		measureR = binary_tree_balance(tree->right);
+		num1 = binary_tree_balance(tree->left);
+		num1++;
+		num2 = binary_tree_balance(tree->right);
 	}
-	total = measureL - measureR;
-	total--;
-
-	return (total);
+	total = num1 - num2;
+	return (total - 1);
 }
