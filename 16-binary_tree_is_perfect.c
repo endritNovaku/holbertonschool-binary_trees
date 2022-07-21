@@ -12,7 +12,7 @@ int find_height(const binary_tree_t *tree)
 		return (0);
 	left = find_height(tree->left);
 	right = find_height(tree->right);
-	if (left >= rright)
+	if (left >= right)
 		return (1 + left);
 	else
 		return (1 + right);
