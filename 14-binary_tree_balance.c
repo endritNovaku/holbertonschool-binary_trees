@@ -12,6 +12,9 @@ int binary_tree_balance(const binary_tree_t *tree)
 	int num1 = 0;
 	int num2 = 0;
 	int total;
+
+	if (tree == NULL)
+		return (0);
 	
 	if (tree != NULL)
 	{
